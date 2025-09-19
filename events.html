@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      padding: 0;
+      margin: 0;
+      flex-direction: column;
+      gap: 20px;
+    "
+  >
+    <div
+      style="
+        height: 200px;
+        width: 200px;
+        background-color: blueviolet;
+        cursor: pointer;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+      "
+      id="name"
+      title="Click Me"
+    >
+      Click Me
+    </div>
+    <p id="blank"></p>
+  </body>
+  <script>
+    const para = document.querySelector("#blank");
+    const button = document.querySelector("#name");
+    button.addEventListener("click", () => {
+      if (para.innerHTML === "hello") {
+        para.innerHTML = "";
+        return;
+      }
+      para.innerHTML = "hello";
+      para.style.color = "red";
+      para.style.fontSize = "30px";
+      para.style.fontWeight = "bold";
+      para.style.fontFamily = "Arial, sans-serif";
+      para.style.textAlign = "center";
+    });
+  </script>
+</html>
