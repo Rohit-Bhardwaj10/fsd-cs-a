@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    "
+  >
+    <div
+      class="main"
+      style="
+        width: 500px;
+        text-align: center;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid black;
+        border-radius: 10px;
+      "
+    >
+      <nav
+        style="
+          position: relative;
+          top: -120px;
+          width: 90%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+        "
+      >
+        <div
+          style="
+            width: 80px;
+            height: 80px;
+            background-color: blue;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 80px;
+            color: white;
+            font-size: large;
+          "
+        >
+          logo
+        </div>
+        <h1 style="margin: 0; margin-bottom: 20px">Counter</h1>
+      </nav>
+      <div
+        id="counter"
+        style="font-size: 60px; font-weight: bold; margin-bottom: 40px"
+      >
+        0
+      </div>
+      <div style="display: flex; gap: 30px">
+        <button id="down" style="font-size: 24px; padding: 10px 30px">
+          Down
+        </button>
+        <button id="up" style="font-size: 24px; padding: 10px 30px">Up</button>
+      </div>
+    </div>
+
+    <script>
+      let count = 0;
+      const counterDiv = document.getElementById("counter");
+      document.getElementById("up").onclick = function () {
+        if (count >= 10) {
+          alert("Upper limit reached!");
+          return;
+        }
+        count++;
+        counterDiv.textContent = count;
+      };
+      document.getElementById("down").onclick = function () {
+        if (count <= 0) {
+          alert("Lower limit reached!");
+          return;
+        }
+        count--;
+        counterDiv.textContent = count;
+      };
+    </script>
+  </body>
+</html>

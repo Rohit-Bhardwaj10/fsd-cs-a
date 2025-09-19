@@ -27,7 +27,7 @@
         text-align: center;
         display: flex;
         justify-content: center;
-        align-items: center;    
+        align-items: center;
       "
       id="name"
       title="Click Me"
@@ -35,6 +35,27 @@
       Click Me
     </div>
     <p id="blank"></p>
+    <div
+      class="color-div"
+      data-color="red"
+      style="width: 100px; height: 100px; background-color: lightslategrey"
+    >
+      red
+    </div>
+    <div
+      class="color-div"
+      data-color="green"
+      style="width: 100px; height: 100px; background-color: lightslategrey"
+    >
+      green
+    </div>
+    <div
+      class="color-div"
+      data-color="yellow"
+      style="width: 100px; height: 100px; background-color: lightslategrey"
+    >
+      yellow
+    </div>
   </body>
   <script>
     const para = document.querySelector("#blank");
@@ -50,6 +71,16 @@
       para.style.fontWeight = "bold";
       para.style.fontFamily = "Arial, sans-serif";
       para.style.textAlign = "center";
+    });
+
+    // Add event listeners to color divs
+    document.querySelectorAll(".color-div").forEach((div) => {
+      div.style.cursor = "pointer";
+      div.addEventListener("click", function () {
+        const color = this.getAttribute("data-color");
+        this.style.backgroundColor = color;
+        this.style.color = color === "yellow" ? "black" : "white"; // for contrast
+      });
     });
   </script>
 </html>
