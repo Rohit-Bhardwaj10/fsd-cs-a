@@ -74,6 +74,13 @@
     <script>
       let count = 0;
       const counterDiv = document.getElementById("counter");
+      function updateCounterColor() {
+        if (count === 5) {
+          counterDiv.style.color = "red";
+        } else {
+          counterDiv.style.color = "black";
+        }
+      }
       document.getElementById("up").onclick = function () {
         if (count >= 10) {
           alert("Upper limit reached!");
@@ -81,6 +88,7 @@
         }
         count++;
         counterDiv.textContent = count;
+        updateCounterColor();
       };
       document.getElementById("down").onclick = function () {
         if (count <= 0) {
@@ -89,6 +97,7 @@
         }
         count--;
         counterDiv.textContent = count;
+        updateCounterColor();
       };
     </script>
   </body>
